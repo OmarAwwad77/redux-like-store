@@ -33,6 +33,7 @@ const useStore = <State, Actions>(
 	const dispatch: Dispatch<Actions> = ({ type, payload }) => {
 		const newState = actions[type](globalState);
 		globalState = newState;
+		// update(globalState) //only updates the current component(since each component gets a copy of the logic inside the hook)
 		listeners.forEach((listener) => listener(globalState));
 	};
 

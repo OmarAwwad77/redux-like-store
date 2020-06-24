@@ -1,4 +1,5 @@
 import { createStore } from '../hooks/useStore';
+import { GlobalState } from './index';
 
 type ActionTypes = 'INCREMENT';
 export type CounterState = {
@@ -6,7 +7,7 @@ export type CounterState = {
 };
 
 export type CounterActions = {
-	[key in ActionTypes]: (state: CounterState) => Object;
+	[key in ActionTypes]: (state: GlobalState) => Object;
 };
 
 export default () =>
